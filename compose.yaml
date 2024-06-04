@@ -51,11 +51,19 @@ services:
     ports:
       - "1025:1025"
       - "8025:8025"
-  php.localhost:
-    container_name: php
-    build: ./php
+  apache.localhost:
+    container_name: apache
+    build: ./apache
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./php/html:/var/www/html
+      - ./apache/html:/var/www/html
+  nginx.localhost:
+    container_name: nginx
+    build: ./nginx
+    ports:
+      - "9080:80"
+      - "9443:443"
+    volumes:
+      - ./nginx/html:/usr/share/nginx/html
