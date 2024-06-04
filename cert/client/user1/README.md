@@ -14,6 +14,7 @@ openssl req -new -key client.key -subj "/C=jp/ST=Tokyo/O=Client/CN=*.aimerzarash
 
 ```
 openssl x509 -req -days 3650 -in client.csr -CA ../inCA2.pem -CAkey ../inCA2.key -CAcreateserial -extfile ../san.txt -out client.pem
+openssl x509 -text -noout -in client.pem
 ```
 
 ## クライアント証明書のインストール
